@@ -1,0 +1,20 @@
+version: 3
+owner: ml-platform
+datasets:
+  - name: support_tickets_us
+    source: s3://cloudsync-ml/training/support_tickets_us_v5.parquet
+    pii_expected: false
+    retention_days: 365
+  - name: support_tickets_eu
+    source: s3://cloudsync-ml/training/support_tickets_eu_v2.parquet
+    pii_expected: true
+    retention_days: 180
+  - name: partner_feedback_beta
+    source: s3://cloudsync-ml/training/partner_feedback_beta_v1.jsonl
+    pii_expected: unknown
+    retention_days: 730
+
+prompt_policy:
+  require_fairness_review: true
+  require_transparency_statement: true
+  block_on_protected_attribute_usage: true

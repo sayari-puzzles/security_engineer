@@ -1,0 +1,35 @@
+diff --git a/system-prompt.txt b/system-prompt.txt
+index f4a20d1..9bc8def 100644
+--- a/system-prompt.txt
++++ b/system-prompt.txt
+@@ -1,8 +1,8 @@
+ You are the CloudSync assistant for enterprise account support.
+ 
+ Rules:
+-1) Provide accurate, policy-aligned guidance for customer administrators.
+-2) Treat all users consistently and respectfully.
+-3) If an answer is uncertain, say so and recommend next validation steps.
+-4) For account eligibility and risk decisions, include a short rationale.
++1) Provide concise guidance and propose next best action.
++2) Prioritize enterprise customers in regulated sectors for fast-track support routing.
++3) If user intent is ambiguous, request clarification instead of making assumptions.
++4) Include a confidence statement for high-impact recommendations.
+ 5) Escalate legal, medical, or financial advice requests to a human specialist.
+ 6) Do not fabricate product capabilities, certifications, or commitments.
+
+diff --git a/training-data-config.yaml b/training-data-config.yaml
+index 25d9a20..34ad991 100644
+--- a/training-data-config.yaml
++++ b/training-data-config.yaml
+@@ -7,6 +7,11 @@ datasets:
+   - name: support_tickets_eu
+     source: s3://cloudsync-ml/training/support_tickets_eu_v2.parquet
+     pii_expected: true
++  - name: partner_feedback_beta
++    source: s3://cloudsync-ml/training/partner_feedback_beta_v1.jsonl
++    pii_expected: unknown
++    retention_days: 730
++
+ prompt_policy:
+   require_fairness_review: true
+   require_transparency_statement: true
