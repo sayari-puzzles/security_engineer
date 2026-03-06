@@ -17,39 +17,35 @@ Please share your screen first then pick **one** task below to work on.
 
 ## Task 1 - SOC 2 to ISO 42001 Mapping
 
-You are given a vendor SOC 2 Type II report and asked to map evidence to internal ISO 42001 controls by end of day.
-
-Goal: show how you would use AI to do ~90% of this quickly. Try implementing traceability, validation, confidence flags, human review.
+**Scenario**: You are given a SOC 2 Type II report from a new Vendor of ours and asked to map evidence to internal ISO 42001 controls.  
+**Goal**: Show how you would use AI to do ~90% of this quickly. Try implementing traceability, validation, confidence flags, human review.
 
 Use these files for this task:
 - `task-1-soc2-mapping/soc2-report.md` - sample vendor SOC 2 report to extract controls/evidence from.
 - `task-1-soc2-mapping/iso-42001-controls.md` - internal ISO 42001 control set to map findings to.
 
-## Task 2 - AI Governance Proxy (Prompt Fairness Gate)
+## Task 2 - Security Questionnaire Automation
 
-ISO 42001 requires ongoing AI impact checks (bias, fairness, transparency). Manual review does not scale.
-
-Goal: design/build an automated gate that checks system prompt changes and blocks risky updates before production (script, LLM checker, policy engine, or workflow automation).
-
-Use these files for this task:
-- `task-2-ai-governance-proxy/fairness-controls.md` - policy rules your checker should enforce.
-- `task-2-ai-governance-proxy/sample-prompt-changes/` - baseline + safe/risky prompt edits to test your gate logic.
-
-## Task 3 - Security Questionnaire Automation
-
-You must answer 50 customer security questionnaires by EOD across mixed formats.
-
-Goal: build a tool/workflow that extracts questions, maps them to a knowledge base, and drafts responses for review while preventing hallucinated capabilities.
+**Scenario**: You received customer security questionnaires in various formats that you need to answer.  
+**Goal**: Build a tool/workflow that extracts questions, maps them to a knowledge base, and drafts responses for review while preventing hallucinated capabilities.
 
 Use these files for this task:
-- `task-3-security-questionnaires/questionnaires/` - sample customer questionnaires across CSV, XLSX, and DOCX formats.
-- `task-3-security-questionnaires/knowledge-base.md` - approved answer source to match against and avoid hallucinations.
+- `task-2-security-questionnaires/questionnaires/` - sample customer questionnaires across CSV, XLSX, and DOCX formats.
+- `task-2-security-questionnaires/knowledge-base.md` - approved answer source to match against and avoid hallucinations.
+
+## Task 3 - AI Governance Proxy (Prompt Fairness Gate)
+
+**Scenario**: ISO 42001 requires ongoing AI impact checks (bias, fairness, transparency). Manual review does not scale.  
+**Goal**: Design/build an automated gate that checks system prompt changes and blocks risky updates before production (script, LLM checker, policy engine, or workflow automation).
+
+Use these files for this task:
+- `task-3-ai-governance-proxy/fairness-controls.md` - policy rules your checker should enforce.
+- `task-3-ai-governance-proxy/sample-prompt-changes/` - baseline + safe/risky prompt edits to test your gate logic.
 
 ## Task 4 - Compliance-as-Code for AI Impact Assessment
 
-Engineers currently complete AI impact forms manually for prompt/data changes.
-
-Goal: automate impact-assessment drafting from Pull Request changes (detect triggers, summarize risk, prefill fields, route for approval).
+**Scenario**: Similar to Task 3 above, engineers currently complete AI impact forms manually for prompt/data changes which doesn't scale.  
+**Goal**: Automate impact-assessment drafting from Pull Request changes (detect triggers, summarize risk, prefill fields, route for approval).
 
 Use these files for this task:
 - `task-4-compliance-as-code/impact-assessment-template.md` - fields your automation should pre-fill for reviewers.
